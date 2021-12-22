@@ -1,0 +1,50 @@
+mixin hashtagLink(text, href)
+  a.hashtag-link(class!=attributes.class href=href)= text
+
+mixin btn(text)
+  button.btn(class!=attributes.class)= text
+
+mixin date(date)
+  span.date(class!=attributes.class)= date
+
+mixin linkTel(tel, href)
+  a.link.link-tel(href=`tel:${href}`)(class!=attributes.class)
+    include ../../images/icon_call.svg
+    span= tel
+
+mixin cardSubtitle(text)
+  h3.card__subtitle= text
+
+mixin cardDescr(text)
+  p.card__descr(class!=attributes.class)= text
+
+mixin cardLink(href)
+  a.card__link(href= href)
+
+mixin cardProject(size, hrefLink, date, descr, hashtagText, hrefHashtag, subtitle)
+  if size === 'big'
+    li.projects__item.projects__item_big
+      article.card.card_big(class!=attributes.class)
+        +cardLink(hrefLink)
+        +hashtagLink(hashtagText, hrefHashtag)(class="card__hashtag")
+        +date(date)(class="card__date card__date_big")
+        +cardSubtitle(subtitle)
+        +cardDescr(descr)(class="card__descr_big")
+        +btn('О проекте')(class="btn_secondary card__btn")
+  if size === 'medium'
+    li.projects__item.projects__item_medium
+      article.card.card_medium(class!=attributes.class)
+        h2.visually-hidden= subtitle
+        +cardLink(hrefLink)
+        +hashtagLink(hashtagText, hrefHashtag)(class="card__hashtag")
+        +cardDescr(descr)
+        +date(date)(class="card__date card__date_medium")
+  if size === 'small'
+    li.projects__item.projects__item_small
+      article.card.card_small(class!=attributes.class)
+        h2.visually-hidden= subtitle
+        +cardLink(hrefLink)
+        +hashtagLink(hashtagText, hrefHashtag)(class="card__hashtag")
+        +cardDescr(descr)
+        +date(date)(class="card__date card__date_medium")
+

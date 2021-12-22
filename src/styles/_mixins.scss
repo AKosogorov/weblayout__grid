@@ -1,0 +1,36 @@
+@mixin transitionColor {
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+@mixin fsz0 {
+  line-height: 0;
+  font-size: 0;
+}
+
+@mixin grid12colmns {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $gap;
+}
+
+@mixin grid2colmns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $gap;
+}
+
+@mixin grid8colmns {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@mixin grid6colmns {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@mixin fontFamilyTTFirsNeue {
+  font-family: 'TT Firs Neue', sans-serif;
+}
+
+@mixin fontFamilyRoboto {
+  font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,22 @@
+include ../../mixins/mixins
+
+section.contacts#contacts
+  .container.contacts__container
+    h2.title.contacts__title Контакты
+    .contacts__grid
+      .map#map
+        .map__content
+          button.btn-close.map__btn
+          ul.map__list
+            li.map__item.map__item_name Студия “High pass”
+            li.map__item.map__item_address
+              address.map__address 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+            li.map__item.map__item_tel
+              +linkTel('+7 (495) 42-423-532', '+749542423532')(class="map__tel")
+      form.form.form-contacts
+        h3.form__title.form-contacts__title Оставить заявку
+        p.form-contacts__descr Оставьте ваши данные, указав в&nbsp;графе "Комментарий" желаемые время и&nbsp;дату съемки или другого мероприятия
+        input.form__input.form-contacts__input(type="text" placeholder="Имя")
+        input.form__input.form-contacts__input(type="email" placeholder="E-mail")
+        textarea.form__input.form-contacts__input.form-contacts__textarea(placeholder="Комментарий")
+        +btn('Отправить')(class="btn_primary form-contacts__btn")

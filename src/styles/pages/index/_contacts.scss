@@ -1,0 +1,96 @@
+.contacts {
+  padding: 38px 0 $sectionPaddingBig;
+
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__grid {
+    @include grid12colmns;
+    grid-template-rows: 460px;
+  }
+}
+
+.map {
+  position: relative;
+  grid-column: span 8;
+
+  [class*="ground-pane"] {
+    filter: grayscale(1);
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 173px 50px 50px 60px;
+    width: 48.2%;
+    color: $colorWhite;
+    background-color: rgba($colorBlackBrown, $alpha: .85);
+  }
+
+  &__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: $colorDullGray;
+  }
+
+  &__item {
+
+    &_name {
+      margin-bottom: 2px;
+      @include fontFamilyTTFirsNeue;
+      font-size: 24px;
+    }
+
+    &_address {
+      margin-bottom: 2px;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    line-height: 175%;
+  }
+}
+
+.form-contacts {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+
+
+  &__title {
+    line-height: 83%;
+    color: $colorBlackBrown;
+    transform: translateY(-6px)
+  }
+
+  &__descr {
+    margin-bottom: 14px;
+    line-height: 22px;
+    color: $colorWetAsphalt;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    color: $colorBlackBrown;
+    background-color: $colorSmokyWhite;
+
+    &::placeholder {
+      color: $colorPearlLightGrey;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+  }
+
+  &__btn {
+    align-self: start;
+    margin-top: auto;
+  }
+}

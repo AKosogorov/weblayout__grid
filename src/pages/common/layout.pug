@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title High pass
+
+    link(rel="shortcut icon" type="image/svg" href="./images/favicon.svg")
+    link(rel="stylesheet" href="./style.css")
+    script(defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU")
+    script(defer src="./main.js")
+  body
+    block header
+      include ./header
+    block content
+    block footer
+      include ./footer

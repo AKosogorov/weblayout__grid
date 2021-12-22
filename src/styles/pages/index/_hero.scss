@@ -1,0 +1,76 @@
+.hero {
+  padding: 40px 0 $sectionPaddingBig;
+
+  &__container {
+    @include grid2colmns;
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 405px 15px 60px 60px;
+    color: $colorWhite;
+  }
+
+  &__main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__hashtag-link {
+    top: 16px;
+    right: 15px;
+  }
+
+  &__descr {
+    margin-bottom: 3px;
+    max-width: 427px;
+  }
+
+  &__title-big {
+    margin: 0 0 18px;
+    max-width: 427px;
+    @include fontFamilyTTFirsNeue;
+    font-size: 36px;
+    line-height: 104%;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  &__list {
+    @include grid2colmns;
+  }
+
+  &__title {
+    transform: translateY(-6px)
+  }
+
+  &__item {
+    @include fsz0;
+    min-height: 257px;
+
+    &_big {
+      min-height: 300px;
+      grid-column: span 2;
+    }
+  }
+
+  &__img {
+    height: 100%;
+  }
+}

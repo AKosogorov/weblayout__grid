@@ -1,0 +1,57 @@
+.footer {
+  background-color: $colorBlackBrown;
+  color: $colorLightGrey;
+
+  &__container {
+    @include grid12colmns;
+    align-items: center;
+    min-height: 106px;
+  }
+
+  &__copyrights-box {
+    grid-column: 1 / 4;
+    justify-self: start;
+    justify-content: start;
+
+    .copyrights {
+      @include fontFamilyTTFirsNeue;
+      font-size: 14px;
+      color: $colorSmokyWhite;
+    }
+  }
+
+  &__social-box {
+    grid-column: 11 / 13;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    padding-top: 26px;
+    height: 100%;
+
+    .social {
+      align-self: center;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 10px;
+    color: $colorLightGrey;
+  }
+}
+
+
+
+.quote {
+  grid-column: 5 / 9;
+  padding: 26px 0 15px;
+  height: 100%;
+  line-height: 130%;
+  color: $colorLightGrey;
+
+  &__author {
+    display: block;
+    font-style: normal;
+    color: #666;
+  }
+}

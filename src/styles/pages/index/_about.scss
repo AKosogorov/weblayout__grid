@@ -1,0 +1,51 @@
+.about {
+  padding: $sectionPaddingSmall 0 70px;
+  background-color: $colorBlackBrown;
+
+  &__grid {
+    @include grid2colmns;
+  }
+
+
+  &__title {
+    margin-bottom: 2px;
+    color: $colorWhite;
+  }
+
+  &__descr {
+    padding: 2px 0 0;
+    line-height: 175%;
+    color: $colorLightGrey;
+  }
+
+  &__subscribe {
+    display: flex;
+    align-items: flex-end;
+    background-image: url('../images/about.webp');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 255px;
+  }
+}
+
+.form-subscribe {
+  color: $colorWhite;
+
+  &__title {
+    margin-bottom: 13px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    width: 75%;
+    background-color: $colorWetAsphalt;
+
+    &::placeholder {
+      color: $colorWhite;
+    }
+  }
+}

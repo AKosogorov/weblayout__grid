@@ -1,0 +1,37 @@
+include ../../mixins/mixins
+
+section.hero#hero
+  h1.visually-hidden Мастер классы
+  .container.hero__container
+    .hero__left
+      picture
+        source.hero__main-img(srcset="./images/hero_1_320.webp" media="(max-width:320px)")
+        source.hero__main-img(srcset="./images/hero_1_768.webp" media="(max-width:768px)")
+        source.hero__main-img(srcset="./images/hero_1_1024.webp" media="(max-width:1124px)")
+        img.hero__main-img(src="./images/hero_1.webp" alt="Фото")
+      +hashtagLink('#мастеркласс', '#')(class="hero__hashtag-link")
+      p.hero__descr Мастер-класс от Игоря Робова
+      h2.hero__title-big Неоновый фотосет 2.0
+        span 7 июля 20:00
+      +btn('Узнать больше')(class="btn_primary hero__btn")
+    .hero__right
+      h2.title.hero__title Работы участников предыдущего мастер-класса
+      ul.hero__list
+        li.hero__item.hero__item_big
+          picture
+            source(srcset="./images/hero_2_320.webp" media="(max-width:320px)")
+            source(srcset="./images/hero_2_768.webp" media="(max-width:768px)")
+            source(srcset="./images/hero_2_1024.webp" media="(max-width:1024px)")
+            img.hero__img.hero__img_big(src="./images/hero_2.webp" alt="Фото")
+        li.hero__item
+          picture
+            source(srcset="./images/hero_3_320.webp" media="(max-width:320px)")
+            source(srcset="./images/hero_3_768.webp" media="(max-width:768px)")
+            source(srcset="./images/hero_3_1024.webp" media="(max-width:1024px)")
+            img.hero__img(src="./images/hero_3.webp" alt="Фото")
+        li.hero__item
+          picture
+            source(srcset="./images/hero_4_320.webp" media="(max-width:320px)")
+            source(srcset="./images/hero_4_768.webp" media="(max-width:768px)")
+            source(srcset="./images/hero_4_1024.webp" media="(max-width:1024px)")
+            img.hero__img(src="./images/hero_4.webp" alt="Фото")

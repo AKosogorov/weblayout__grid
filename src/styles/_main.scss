@@ -1,0 +1,266 @@
+@import '_fonts';
+@import '_variables';
+@import '_mixins';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include fontFamilyRoboto;
+  font-size: 16px;
+  background-color: $colorWhite;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  @include transitionColor;
+}
+
+svg {
+  transition: fill .3s ease-in-out;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+picture {
+  @include fsz0;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1390px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+.title {
+  @include fontFamilyTTFirsNeue;
+  font-weight: 700;
+  font-size: 24px;
+  color: $colorSignalBlack;
+}
+
+.btn {
+  border: 3px solid $colorOrangeCrayola;
+  padding: 13px 19px;
+  font-weight: 700;
+  color: $colorWhite;
+  outline: none;
+  @include transitionColor;
+
+  &_primary {
+    background-color: $colorOrangeCrayola;
+
+    &:hover {
+      border-color: $colorPearlOrange;
+      background-color: $colorPearlOrange;
+    }
+
+    &:focus {
+      border-color: $colorTitian;
+      background-color: $colorOrangeCrayola;
+    }
+  }
+
+  &_secondary {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $colorOrangeCrayola;
+    }
+
+    &:focus {
+      background-color: $colorPearlOrange;
+    }
+  }
+
+  &:active {
+    border-color: $colorTitian;
+    background-color: $colorTitian;
+  }
+}
+
+.btn-close {
+  position: relative;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 10px;
+    z-index: 2;
+    background-color: $colorWhite;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $colorOrangeCrayola;
+  }
+
+  &:active {
+    background-color: $colorTitian;
+  }
+}
+
+.link {
+  position: relative;
+  z-index: 1;
+  @include fontFamilyTTFirsNeue;
+  color: $colorWhite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    background-color: $colorPearlOrange;
+  }
+
+  &:focus {
+    color: $colorWhite;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    color: $colorOrangeCrayola;
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    color: $colorTitian;
+  }
+}
+
+.hashtag-link {
+  position: absolute;
+  padding: 7px 15px;
+  font-size: 14px;
+  color: $colorWhite;
+  background-color: $colorSignalBlack;
+
+  &:focus,
+  &:hover {
+    background-color: $colorOrangeCrayola;
+  }
+
+  &:active {
+    background-color: $colorTitian;
+  }
+}
+
+.link-tel {
+
+  display: flex;
+  align-items: center;
+
+  &:hover svg {
+    fill: $colorOrangeCrayola;
+  }
+
+  &:focus svg {
+    fill: $colorWhite;
+  }
+
+  &:active svg {
+    fill: $colorTitian;
+  }
+}
+
+.date {
+  padding-left: 18px;
+  font-size: 12px;
+  color: $colorPearlLightGrey;
+  background-image: url('./images/icon_calendar.svg');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.form {
+  width: 100%;
+
+  &__title {
+    @include fontFamilyTTFirsNeue;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  &__input {
+    border: 1px solid transparent;
+    padding: 15px 23px;
+    height: 50px;
+    color: $colorWhite;
+    outline: none;
+    @include transitionColor;
+
+    &::placeholder {
+      transition: inherit;
+    }
+
+    &:hover::placeholder {
+      color: $colorOrangeCrayola;
+    }
+
+    &:focus {
+      border-color: $colorOrangeCrayola;
+    }
+
+    &_error {
+      border-color: $colorFireSiennaCraiola;
+    }
+  }
+}
+
+

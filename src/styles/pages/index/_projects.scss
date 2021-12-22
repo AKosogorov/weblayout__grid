@@ -1,0 +1,123 @@
+.projects {
+  padding: 71px 0 $sectionPaddingSmall;
+
+  &__title {
+    margin-bottom: 13px;
+  }
+
+  &__list {
+    @include grid12colmns;
+    grid-template-rows: 300px 300px;
+    grid-auto-flow: row;
+  }
+
+  &__item {
+
+    &_small {
+      grid-column: span 2;
+    }
+
+    &_medium {
+      grid-column: span 3;
+    }
+
+    &_big {
+      grid-column: span 6;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 203px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  &_big {
+    padding: 26px 30px 30px;
+    color: $colorWhite;
+  }
+
+  &_1 {
+    background-image: url('./images/card_1.webp');
+  }
+
+  &_2 {
+    background-image: url('./images/card_2.webp');
+  }
+
+  &_3 {
+    background-image: url('./images/card_3.webp');
+  }
+
+  &_4 {
+    background-image: url('./images/card_4.webp');
+  }
+
+  &_5 {
+    background-image: url('./images/card_5.webp');
+  }
+
+  &_6 {
+    background-image: url('./images/card_6.webp');
+  }
+
+  &_7 {
+    background-image: url('./images/card_7.webp');
+  }
+
+  &__link {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__hashtag {
+    top: 7px;
+    right: 7px;
+    z-index: 2;
+    padding: 6px 14px;
+  }
+
+  &__subtitle {
+    z-index: 2;
+    margin-bottom: 7px;
+    max-width: 293px;
+    @include fontFamilyTTFirsNeue;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  &__descr {
+    z-index: 2;
+    margin-bottom: 19px;
+    max-width: 293px;
+    height: 60px;
+    line-height: 130%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__btn {
+    z-index: 2;
+    margin-top: auto;
+  }
+
+  &__date {
+
+    &_big {
+      margin-bottom: 5px;
+      color: $colorWhite;
+    }
+  }
+}
+

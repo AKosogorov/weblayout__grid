@@ -1,0 +1,22 @@
+include ../mixins/mixins
+
+header.header#header
+  - const navList = [{text: 'О студии', link: '#about'}, {text: 'Наши проекты', link: '#projects'}, {text: 'Услуги', link: '#projects'}, {text: 'Мастер-классы', link: '#hero'}, {text: 'Контакты', link: '#contacts'},]
+  .container.header__container
+    include ./logo
+    div.burger
+      button.burger__btn
+        span.burger__icon
+    nav.nav
+      button.btn-close.nav__btn-close
+      ul.nav__list
+        each item in navList
+          li.nav__item
+            a.link.nav__link(href= item.link)= item.text
+      +linkTel('+7 (495) 42-423-532', '+749542423532')(class="nav__tel")
+    include ./social
+    form.search
+      button.search__btn(type="submit")
+        include ../../images/icon_search.svg
+      input.search__input(type="text" placeholder="Что будем искать?")
+      button.btn-close.search__btn-close
